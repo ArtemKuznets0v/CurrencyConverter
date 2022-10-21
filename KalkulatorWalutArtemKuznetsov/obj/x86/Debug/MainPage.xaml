@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="KalkulatorWalutArtemKuznetsov.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KalkulatorWalutArtemKuznetsov"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <DataTemplate x:Key="WalutyItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding kod_waluty}" Width="55"/>
+                <TextBlock Text=": "></TextBlock>
+                <TextBlock Text="{Binding kurs_sredni}" Width="55"/>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid x:ConnectionId='3' x:Name="GContentPanel"                                Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="497*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:ConnectionId='4' x:Name="txtKwota" HorizontalAlignment="Left" Margin="148,245,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="40" InputScope="CurrencyAmount" Grid.Row="1" Width="138"                                    Background="#66FFFFFF" SelectionHighlightColor="White"/>
+        <ListBox x:ConnectionId='5' x:Name="lbxNaWalute" Margin="982,418,62,40" ItemTemplate="{StaticResource WalutyItemTemplate}" Grid.Row="1"                                                 BorderBrush="#FF0031FF" BorderThickness="5"/>
+        <ListBox x:ConnectionId='6' x:Name="lbxZWaluty" Margin="57,418,985,40" ItemTemplate="{StaticResource WalutyItemTemplate}" Grid.Row="1"                                                BorderBrush="#FF0031FF" BorderThickness="5">
+            <TextBlock Text="TextBlock" TextWrapping="Wrap"/>
+        </ListBox>
+        <TextBlock x:ConnectionId='7' x:Name="Nazwa" HorizontalAlignment="Left" Margin="56,32,0,0" Grid.Row="1" Text="Kalkulator" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="68" Foreground="White" Height="89" Width="309"/>
+        <TextBlock x:ConnectionId='8' x:Name="TbPrzeliczona" HorizontalAlignment="Left" Margin="1110,250,0,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="40" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="48" Margin="56,143,0,0" Text="z waluty:" TextWrapping="Wrap" VerticalAlignment="Top" Height="88" Width="304" FocusVisualPrimaryBrush="White" Foreground="White" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="48" Margin="906,143,0,0" Text="przeliczone:" TextWrapping="Wrap" VerticalAlignment="Top" Height="88" Width="304" FocusVisualPrimaryBrush="White" Foreground="White" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="38" Margin="354,362,0,0" Text="z waluty                      -->                     na walute" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="883" FocusVisualPrimaryBrush="White" Foreground="White" Grid.Row="1"/>
+        <Button x:ConnectionId='9' x:Name="ButOprog" Content="O programie" Margin="1021,31,0,0" Grid.Row="1" VerticalAlignment="Top" Height="82" Width="189" FontSize="29" Background="#33000000" Foreground="White" FocusVisualPrimaryBrush="White" FocusVisualSecondaryBrush="#99FFFFFF" BorderBrush="White"                       />
+        <Button x:ConnectionId='10' x:Name="ButKoniec" Content="Koniec" Margin="1249,31,0,0" Grid.Row="1" VerticalAlignment="Top" Height="82" Width="189" FontSize="29" Background="#33080000" Foreground="White" FocusVisualPrimaryBrush="White" FocusVisualSecondaryBrush="#99FFFFFF" BorderBrush="White"                        />
+    </Grid>
+</Page>
+
